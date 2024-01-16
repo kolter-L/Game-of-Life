@@ -1,0 +1,27 @@
+version: "3"
+services:
+  
+  ui:
+   build:
+      context: ./frontend
+      dockerfile: Dockerfile
+   ports:
+    -  3000:3000
+   container_name: conway-frontend
+   volumes:
+    -  ./frontend/src:/usr/app/src
+    -  ./frontend/public:/usr/app/public
+   depends_on:
+    - backend
+   stdin_open: true
+   tty: true
+
+  backend:
+   build:
+      context: ./backend
+      dockerfile: Dockerfile
+   ports:
+     - 3001:3001
+   container_name: conway-backend
+   volumes:
+    - ./backend/src:/usr/app/src
