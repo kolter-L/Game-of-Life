@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js"
   },
-  "author": "Tyler Friesen",
+  "author": "Kolter Leisy",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
